@@ -1,0 +1,175 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div>
+            <h1>🚀 Productivity Dashboard</h1>
+            <p class="subtitle">
+                Quản lý học tập, công việc và mục tiêu cá nhân
+            </p>
+        </div>
+
+        <button id="darkBtn">
+            🌙 Dark Mode
+        </button>
+
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="dashboard">
+
+        <div class="stat-card">
+            <h3>Tổng việc</h3>
+            <span id="totalTasks">0</span>
+        </div>
+
+        <div class="stat-card">
+            <h3>Đã hoàn thành</h3>
+            <span id="doneTasks">0</span>
+        </div>
+
+        <div class="stat-card">
+            <h3>Còn lại</h3>
+            <span id="pendingTasks">0</span>
+        </div>
+
+    </div>
+
+    <!-- ADD TASK -->
+
+    <div class="task-form">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Nhập công việc..."
+        >
+
+        <input
+            type="date"
+            id="deadlineInput"
+        >
+
+        <select id="priorityInput">
+
+            <option value="high">
+                🔴 Cao
+            </option>
+
+            <option value="medium">
+                🟡 Trung bình
+            </option>
+
+            <option value="low">
+                🟢 Thấp
+            </option>
+
+        </select>
+
+        <button id="addBtn">
+            ➕ Thêm
+        </button>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Tìm kiếm công việc..."
+        >
+
+    </div>
+
+    <!-- FILTER -->
+
+    <div class="filter-section">
+
+        <button
+            class="filter-btn active"
+            data-filter="all"
+        >
+            Tất cả
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="pending"
+        >
+            Đang làm
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="completed"
+        >
+            Hoàn thành
+        </button>
+
+    </div>
+
+    <!-- TASK LIST -->
+
+    <ul id="taskList"></ul>
+
+    <!-- CHARTS -->
+
+    <div class="chart-wrapper">
+
+        <div class="chart-card">
+
+            <h2>
+                📊 Hiệu suất
+            </h2>
+
+            <canvas
+                id="barChart"
+                height="180"
+            ></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h2>
+                🎯 Tỷ lệ hoàn thành
+            </h2>
+
+            <canvas
+                id="pieChart"
+                height="180"
+            ></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
